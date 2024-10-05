@@ -1,4 +1,11 @@
 <?php
+/*
+Name:Dhyani Soni
+Date:10/4/2024
+Course Section:IT202-003
+Phase 1 Assignment: Login and Logout
+Email:ds2338
+*/
 if (!isset($_SESSION['login'])) {
 ?>
   <h2>Please log in to the Tea and Coffee Accessories Shop Inventory Website</h2><br>

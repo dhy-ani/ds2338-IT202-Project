@@ -1,4 +1,11 @@
 <?php
+/*
+Name:Dhyani Soni
+Date:10/4/2024
+Course Section:IT202-003
+Phase 1 Assignment: Login and Logout
+Email:ds2338
+*/
 require_once('database.php');
 $emailAddress = $_POST['emailAddress'];
 $password = $_POST['password'];
