@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: sql1.njit.edu
--- Generation Time: Oct 19, 2024 at 07:38 AM
+-- Generation Time: Nov 02, 2024 at 03:36 AM
 -- Server version: 8.0.17
 -- PHP Version: 7.4.8
 
@@ -43,7 +43,9 @@ INSERT INTO `AccessoryCategories` (`AccessoryCategoryID`, `AccessoryCategoryCode
 (200, 'FPS', 'French Press', 5, '2024-10-19 03:00:18'),
 (300, 'TIS', 'Tea Infuser Set', 2, '2024-10-19 03:00:19'),
 (400, 'CGR', 'Coffee Grinder', 3, '2024-10-19 03:00:19'),
-(500, 'CBM', 'Cold Brew Coffee Maker', 7, '2024-10-19 03:38:19');
+(500, 'CBM', 'Cold Brew Coffee Maker', 7, '2024-10-19 03:38:19'),
+(600, 'VAR', 'FourTest', 4, '2024-11-01 16:31:42'),
+(700, 'FAP', 'Filter and Pods', 4, '2024-11-01 18:26:33');
 
 --
 -- Indexes for dumped tables
