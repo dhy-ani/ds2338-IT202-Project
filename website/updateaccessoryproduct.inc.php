@@ -7,15 +7,15 @@ Phase 1 Assignment: Login and Logout
 Email:ds2338@njit.edu
 */
 if (!isset($_POST['AccessoryProductID']) or (!is_numeric($_POST['AccessoryProductID']))) {
-?>
-   <h2>You did not select a valid productID value</h2>
+?><div class='link-box'>
+   <h2>You did not select a valid productID value</h2></div>
    <a href="index.php?content=listaccessoryproducts">List products</a>
    <?php
 } else {
-   $productID = $_POST['AccessoryProductID'];
+   $productID =  ($_POST['AccessoryProductID']);
    $product = Product::findProduct($productID);
    if ($product) {
-   ?>
+   ?><div class='link-box'>
        <h2>Update Product <?php echo $product->productID; ?></h2><br>
        <form name="accessoryproduct" action="index.php" method="post">
            <table>
@@ -50,18 +50,19 @@ if (!isset($_POST['AccessoryProductID']) or (!is_numeric($_POST['AccessoryProduc
                 </tr>
                 <tr>
                    <td>Accessory Size:</td>
-                   <td><input type="text" name="AccessorySize" value="<?php echo $product->accessorySize; ?>"></td>
+                   <td><input type="text" name="AccessorySize" value="<?php echo  $product->accessorySize; ?>"></td>
                 </tr>
            </table><br><br>
            <input type="submit" name="answer" value="Update Product">
            <input type="submit" name="answer" value="Cancel">
            <input type="hidden" name="AccessoryProductID" value="<?php echo $productID; ?>">
            <input type="hidden" name="content" value="changeaccessoryproducts">
+        </div>
        </form>
    <?php   } else {
-   ?>
+   ?><div class='link-box'>
        <h2>Sorry, product <?php echo $productID; ?> not found</h2>
-       <a href="index.php?content=listaccessoryproducts">List products</a>
+       <a href="index.php?content=listaccessoryproducts">List products</a></div>
 <?php
    }
 }

@@ -13,7 +13,11 @@ include("accessoryproduct.php");
 ?>
 <!DOCTYPE html>
 <html>
-<head><title>Welcome to Inventory Helper of Tea and Coffee Accessories Shop</title></head>
+
+<head><title>Welcome to Inventory Helper of Tea and Coffee Accessories Shop</title>
+<link rel="stylesheet" type="text/css" href="styles.css">
+<link rel="icon" type="image/jpg" href="image/logo.jpg">
+</head>
 <body>
 <header>
        <?php include("header.inc.php"); ?>

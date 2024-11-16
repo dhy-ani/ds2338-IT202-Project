@@ -11,7 +11,7 @@ $productID = $_GET['AccessoryProductID'];
 $product = Product::findProduct($productID);
 $result = $product->removeProduct();
 if ($result)
-   echo "<h2>Product $productID removed</h2>\n";
+   echo "<div class='link-box'><h2>Product $productID removed</h2></div>\n";
 else
-   echo "<h2>Sorry, problem removing item $productID</h2>\n";
+   echo "<div class='link-box'><h2>Sorry, problem removing item $productID</h2></div>\n";
 ?>

@@ -1,0 +1,144 @@
+body {
+    font-family: Geneva, Tahoma, sans-serif;
+    font-size: 80%;
+    color: #db7929;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+    background-image: url('https://stauntonandhenry.com/cdn/shop/products/101198-1_900x.jpg?v=1581011738');
+ }
+ 
+ 
+ h1 {
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 120%;
+    color: #cb8e39;
+    margin: 0px;
+    padding: 0px;
+ }
+ 
+ 
+ h2 {
+    font-family: Geneva, Tahoma, sans-serif;
+    font-size: 120%;
+    color: #cb8e39;
+    margin: 0px;
+    padding: 0px;
+ }
+ h3 {
+    font-family: Geneva, Tahoma, sans-serif;
+    font-size: 110%;
+    color: #b38e5b;
+    margin: 0px;
+    padding: 0px;
+ }
+ h4 {
+    font-family: Geneva, Tahoma, sans-serif;
+    font-size: 100%;
+    color: #ae854b;
+    margin: 0px;
+    padding: 0px;
+ }
+ 
+ 
+ footer {
+    font-family: Geneva, Tahoma, sans-serif;
+    background-color: #f3f6f8;
+    padding: 7px;
+    border-bottom: 1px solid #E2EAEF;
+    border-top: 1px solid #E2EAEF;
+ }
+ main {
+    padding: 5px;
+    border-top: 1px solid #E2EAEF;
+    float: left;
+    width: 55%;
+    height: 100%;
+ }
+ 
+ main table {
+    padding: 2px;
+ }
+ 
+ main td {
+    padding: 2px;
+ }
+ header {
+    padding: 7px;
+    border-bottom: 1px solid #986338;
+    height: 40px;
+    width: 100%;
+ }
+ 
+ nav {
+    padding: 5px;
+    border-bottom: 1px solid #713707;
+    border-top: 1px solid #713707;
+    border-right: 1px solid #713707;
+    background-color: #713707;
+    width: 20%;
+ }
+ footer {
+    font-family: Geneva, Tahoma, sans-serif;
+    clear: both;
+    text-align: center;
+    padding: 7px;
+    border-bottom: 1px solid #E2EAEF;
+    border-top: 1px solid #E2EAEF;
+    background-color: #f3f6f8;
+    width: 100%;
+ }
+ a {
+    color: #9c7743;
+    text-decoration: none;
+ }
+ 
+ a:link {
+    color: #9c7743;
+    text-decoration: none;
+ }
+ 
+ a:visited {
+    color: #9c7743;
+    text-decoration: none;
+ }
+ 
+ a:hover {
+    color: #cf933f;
+    text-decoration: underline;
+ }
+ input {
+    border: 1px solid currentcolor;
+ }
+ 
+ input[type=submit] {
+    font-family: Verdana, Arial, sans-serif;
+ }
+ 
+ input:required:invalid {
+    border: 1px solid red;
+ }
+ 
+ input:required:valid {
+    border: 1px solid limegreen;
+ }
+ 
+ input:focus {
+    background-color: #e6f7fa;
+ }
+ .box{
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      text-align: center;
+  
+ }
+
+.link-box{
+   background-color: rgba(255, 255, 255, 0.8);
+      padding: 7px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+}

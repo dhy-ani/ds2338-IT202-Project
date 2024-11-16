@@ -8,7 +8,10 @@ Email:ds2338@njit.edu
 */
 if (!isset($_SESSION['login'])) {
 ?>
+  <div class='box'>
   <h2>Please log in to the Tea and Coffee Accessories Shop Inventory Website</h2><br>
+  <img src="images/cups.jpg" alt="Coffee Maker" width=150px height=150px>
+
   <form name="login" action="index.php" method="post">
     <label>Email:</label>
     <input type="text" name="emailAddress" size="20">
@@ -21,15 +24,16 @@ if (!isset($_SESSION['login'])) {
     <input type="submit" value="Login">
     <input type="hidden" name="content" value="validate">
   </form>
+  </div>
   <?php
 } else {
-   echo "<h2>Welcome to Inventory Helper of Tea and Coffee Accessories Shop, {$_SESSION['firstName']} {$_SESSION['lastName']} ({$_SESSION['pronouns']})</h2>";
+   echo "<div class='box'><h2>Welcome to Inventory Helper of Tea and Coffee Accessories Shop, {$_SESSION['firstName']} {$_SESSION['lastName']} ({$_SESSION['pronouns']})</h2>";
 ?>
    <br><br>
    <p>This program tracks category and item inventory</p>
    <p>Please use the links in the navigation window</p>
    <p>Please DO NOT use the browser navigation buttons!</p>
-   <a href="index.php?content=logout"><strong>Logout</strong></a>
+   <a href="index.php?content=logout"><strong>Logout</strong></a></div>
 <?php
 }
 ?>

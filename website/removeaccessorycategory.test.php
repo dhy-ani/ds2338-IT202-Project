@@ -12,9 +12,9 @@ $categoryID = $_GET['AccessoryCategoryID'];
 $category = Category::findCategory($categoryID);
 $result = $category->removeCategory();
 if ($result)
-   echo "<h2>Category $categoryID removed</h2>\n";
+   echo "<div class='link-box'><h2>Category $categoryID removed</h2></div>\n";
 else
-   echo "<h2>Sorry, problem removing category $categoryID</h2>\n";
+   echo "<div class='link-box'><h2>Sorry, problem removing category $categoryID</h2></div>\n";
 
 
 ?>

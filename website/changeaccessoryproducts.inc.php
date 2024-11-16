@@ -19,14 +19,14 @@ $product->categoryID = $_POST['AccessoryCategoryID'];
 $product->listPrice = $_POST['AccessoryListPrice'];
 $result = $product->updateProduct();
 if ($result) {
-   echo "<h2>Product $productID updated</h2>\n";
+   echo "<div class='link-box'><h2>Product $productID updated</h2></div>\n";
 } else {
-   echo "<h2>Problem updating Product $productID</h2>\n";
+   echo "<div class='link-box'><h2>Problem updating Product $productID</h2></div>\n";
 }
 } else {
-   echo "<h2>Update Canceled for Product $productID</h2>\n";
+   echo "<div class='link-box'><h2>Update Canceled for Product $productID</h2></div>\n";
 }
 } else {
-   echo "<h2>Please login first</h2>\n";
+   echo "<div class='link-box'><h2>Please login first</h2></div>\n";
 }
 ?>

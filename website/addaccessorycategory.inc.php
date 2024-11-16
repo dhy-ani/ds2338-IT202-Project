@@ -8,24 +8,24 @@ Email:ds2338@njit.edu
 */
 //include("accessorycategory.php");
 if (isset($_SESSION['login'])) {
-  $categoryID = $_POST['AccessoryCategoryID'];
-if ((trim($categoryID) == '') or (!is_numeric($categoryID))) {
-  echo "<h2>Sorry, you must enter a valid category ID number</h2>\n";
+  $categoryID = filter_input(INPUT_POST, 'AccessoryCategoryID', FILTER_VALIDATE_INT);
+if ((trim($categoryID) == '') or (!is_int($categoryID))) {
+  echo "<div class='link-box'><h2>Sorry, you must enter a valid category ID number</h2></div>\n";
 } else {
-  $categoryCode = $_POST['AccessoryCategoryCode'];
-  $categoryName = $_POST['AccessoryCategoryName'];
-  $shelfNumber = $_POST['ShelfNumber'];
+  $categoryCode = htmlspecialchars($_POST['AccessoryCategoryCode']);
+  $categoryName = htmlspecialchars($_POST['AccessoryCategoryName']);
+  $shelfNumber = htmlspecialchars($_POST['ShelfNumber']);
   $category = new Category($categoryID, $categoryCode, $categoryName,$shelfNumber);
   $result = $category->saveCategory();
   if ($result) {
-      echo "<h2>New Category #$categoryID successfully added</h2>\n";
-      echo "<h2>$category</h2>\n";
+      echo "<div class='link-box'><h2>New Category #$categoryID successfully added</h2></div>\n";
+      echo "<div class='link-box'><h2>$category</h2>\n";
   } else {
-      echo "<h2>Sorry, there was a problem adding that category</h2>\n";
+      echo "<div class='link-box'><h2>Sorry, there was a problem adding that category</h2></div>\n";
   }
 }
 } else {
-  echo "<h2>Please log in first</h2>\n";
+  echo "<div class='link-box'><h2>Please log in first</h2></div>\n";
 }
 
 ?>

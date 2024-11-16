@@ -5,7 +5,7 @@ Course Section:IT202-003
 Phase 1 Assignment: Login and Logout
 Email:ds2338@njit.edu
 -->
-<h2>Select Category</h2>
+<div class='link-box'><h2>Select Category</h2></div>
 <form name="categories" method="post">
    <select name="AccessoryCategoryID" size="20">
        <?php
