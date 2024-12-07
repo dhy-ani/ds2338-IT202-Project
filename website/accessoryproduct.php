@@ -10,23 +10,25 @@ require_once('database.php');
 class Product
 {
    public $productID;
-   public $productCode;
    public $productName;
+   public $productCode;
+   public $description;
    public $categoryID;
+   public $wholePrice;
    public $listPrice;
    public $accessorySize;
-   public $description;
-   public $wholePrice;
-   function __construct($productID,$productCode, $productName,$categoryID,$listPrice,$accessorySize,$description,$wholePrice)
+
+
+   function __construct($productID, $productName,$productCode,$description,$categoryID,$wholePrice, $listPrice,$accessorySize)
    {
        $this->productID = $productID;
-       $this->productCode = $productCode;
        $this->productName = $productName;
+       $this->productCode = $productCode;
+       $this->description= $description;
        $this->categoryID = $categoryID;
+       $this->wholePrice= $wholePrice;
        $this->listPrice = $listPrice;
        $this->accessorySize=$accessorySize;
-       $this->description= $description;
-       $this->wholePrice= $wholePrice;
    }
    function __toString()
    {
@@ -41,7 +43,7 @@ class Product
        $query = "INSERT INTO AccessoryProducts VALUES (?,?, ?, ?, ?, ?, ?, ?, NOW())";
        $stmt = $db->prepare($query);
        $stmt->bind_param(
-           "issidssd",
+           "isssidds",
            $this->productID,     // integer data type
            $this->productName,   // string data type
            $this->productCode,
@@ -49,7 +51,7 @@ class Product
            $this->categoryID, // integer data type
            $this->wholePrice,
            $this->listPrice,   // float data type
-           $this->accessorySize,
+           $this->accessorySize
 
 
        );
@@ -67,13 +69,14 @@ class Product
         while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
             $product = new Product(
                 $row['AccessoryProductID'],
-                $row['AccessoryProductCode'],
                 $row['AccessoryProductName'],
+                $row['AccessoryProductCode'],
+                $row['AccessoryDescription'],
                 $row['AccessoryCategoryID'],
+                $row['AccessoryWholesalePrice'],
                 $row['AccessoryListPrice'],
                 $row['AccessorySize'],
-                $row['AccessoryDescription'],
-                $row['AccessoryWholesalePrice']
+
             );
             array_push($products, $product);
         }
@@ -93,13 +96,15 @@ class Product
         if ($row) {
             $product = new Product(
                 $row['AccessoryProductID'],
-                $row['AccessoryProductCode'],
                 $row['AccessoryProductName'],
-                $row['AccessoryCategoryID'],
-                $row['AccessoryListPrice'],
-                $row['AccessorySize'],
+                $row['AccessoryProductCode'],
                 $row['AccessoryDescription'],
-                $row['AccessoryWholesalePrice']
+                $row['AccessoryCategoryID'],
+                $row['AccessoryWholesalePrice'],
+                $row['AccessoryListPrice'],
+                $row['AccessorySize']
+
+
             );
             $db->close();
             return $product;
@@ -112,17 +117,17 @@ class Product
     {
         $db = getDB();
         $query = "UPDATE AccessoryProducts SET AccessoryProductName= ?, " .
-            "AccessoryCategoryID= ?, AccessoryProductCode=?, AccessorylistPrice= ?, AccessorySize= ?, AccessoryDescription=?,AccessoryWholesalePrice=? WHERE AccessoryProductID = $this->productID";
+            "AccessoryProductCode=?,AccessoryDescription=?,AccessoryCategoryID= ?, AccessoryWholesalePrice=?, AccessorylistPrice= ?, AccessorySize= ?  WHERE AccessoryProductID = $this->productID";
         $stmt = $db->prepare($query);
         $stmt->bind_param(
-            "ssidssd",
+            "sssidds",
             $this->productName,
-            $this->categoryID,
             $this->productCode,
-            $this->listPrice,
-            $this->accessorySize,
             $this->description,
-            $this->wholePrice
+            $this->categoryID,
+            $this->wholePrice,
+            $this->listPrice,
+            $this->accessorySize
         );
         $result = $stmt->execute();
         $db->close();
@@ -136,6 +141,43 @@ class Product
         $db->close();
         return $result;
     }
+    static function getTotalItems()
+    {
+   $db = getDB();
+   $query = "SELECT count(AccessoryProductID) FROM AccessoryProducts";
+   $result = $db->query($query);
+   $row = $result->fetch_array();
+   if ($row) {
+       return $row[0];
+   } else {
+       return NULL;
+   }
+    }
+    static function getTotalListPrice()
+    {
+        $db = getDB();
+        $query = "SELECT sum(AccessoryListPrice) FROM AccessoryProducts";
+        $result = $db->query($query);
+        $row = $result->fetch_array();
+        if ($row) {
+            return $row[0];
+        } else {
+            return NULL;
+        }
+    }
+    static function getTotalWholePrice()
+    {
+        $db = getDB();
+        $query = "SELECT sum(AccessoryWholesalePrice) FROM AccessoryProducts";
+        $result = $db->query($query);
+        $row = $result->fetch_array();
+        if ($row) {
+            return $row[0];
+        } else {
+            return NULL;
+        }
+    }
+
  
 }
 ?>

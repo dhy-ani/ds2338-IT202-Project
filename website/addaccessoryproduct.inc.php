@@ -8,11 +8,14 @@ Email:ds2338@njit.edu
 */
 //include('accessoryproduct.php');if (isset($_SESSION['login'])) {
     // Input Validation
-    $productID = filter_input(INPUT_POST, 'AccessoryProductID', FILTER_VALIDATE_INT);
-    $categoryID = filter_input(INPUT_POST, 'AccessoryCategoryID', FILTER_VALIDATE_INT);
+    $productID = filter_input(INPUT_POST, 'AccessoryProductID', FILTER_VALIDATE_INT);    
+    $productName = htmlspecialchars($_POST['AccessoryProductName']);
+    $productCode=htmlspecialchars($_POST['AccessoryProductCode']);
+    $description = htmlspecialchars($_POST['AccessoryDescription']);
+    $categoryID = filter_input(INPUT_POST, 'AccessoryCategoryID', FILTER_VALIDATE_INT);    
+    $wholePrice = filter_input(INPUT_POST,'AccessoryWholesalePrice',FILTER_VALIDATE_FLOAT);
     $listPrice = filter_input(INPUT_POST, 'AccessoryListPrice', FILTER_VALIDATE_FLOAT);
-    $wholePrice = filter_input(INPUT_POST, 'AccessoryWholesalePrice', FILTER_VALIDATE_FLOAT);
-
+    $accessorySize = htmlspecialchars($_POST['AccessorySize']);
     if (!$productID || !$categoryID || !$listPrice || !$wholePrice) {
         echo "<div class='link-box'><h2>All fields must have valid numeric values.</h2></div>\n";
         exit;
@@ -22,20 +25,20 @@ Email:ds2338@njit.edu
         echo "<div class='link-box'><h2>Sorry, a product with ID #$productID already exists.</h2></div>\n";
         exit;
     }
+
     else {
-    $productName = htmlspecialchars($_POST['AccessoryProductName']);
-    $productCode=htmlspecialchars($_POST['AccessoryProductCode']);
-    $accessorySize = htmlspecialchars($_POST['AccessorySize']);
-    $description = htmlspecialchars($_POST['AccessoryDescription']);
+
     $product = new Product(
-        $productID,       
+        $productID,   
         $productName,
-        $productCode,
-        $categoryID,
-        $listPrice,
-        $accessorySize,
+        $productCode,    
         $description,
-        $wholePrice
+        $categoryID,
+        $wholePrice,
+        $listPrice,
+        $accessorySize
+
+
     );
     $result = $product->saveProduct();
     if ($result){

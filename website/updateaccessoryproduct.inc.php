@@ -7,7 +7,9 @@ Phase 1 Assignment: Login and Logout
 Email:ds2338@njit.edu
 */
 if (!isset($_POST['AccessoryProductID']) or (!is_numeric($_POST['AccessoryProductID']))) {
-?><div class='link-box'>
+?>
+
+<div class='link-box'>
    <h2>You did not select a valid productID value</h2></div>
    <a href="index.php?content=listaccessoryproducts">List products</a>
    <?php
@@ -29,10 +31,6 @@ if (!isset($_POST['AccessoryProductID']) or (!is_numeric($_POST['AccessoryProduc
                    <td><input type="text" name="AccessoryProductName" value="<?php echo $product->productName; ?>"></td>
                </tr>
                <tr>
-                   <td>Category ID</td>
-               <td><input type="text" name="AccessoryCategoryID" value="<?php echo $product->categoryID; ?>"></td>
-               </tr>
-               <tr>
                    <td>Product Code</td>
                  <td><input type="text" name="AccessoryProductCode" value="<?php echo $product->productCode; ?>"></td>
                </tr>
@@ -41,13 +39,19 @@ if (!isset($_POST['AccessoryProductID']) or (!is_numeric($_POST['AccessoryProduc
                  <td><input type="text" name="AccessoryDescription" value="<?php echo $product->description; ?>"></td>
                </tr>
                <tr>
+                   <td>Category ID</td>
+               <td><input type="text" name="AccessoryCategoryID" value="<?php echo $product->categoryID; ?>"></td>
+               </tr>
+               <tr>
+                   <td>WholeSale Price:</td>
+                   <td><input type="text" name="AccessoryWholesalePrice" value="<?php echo $product->wholePrice; ?>"></td>
+                </tr>
+              
+               <tr>
                    <td>List Price</td>
                  <td><input type="text" name="AccessoryListPrice" value="<?php echo $product->listPrice; ?>"></td>
                </tr>
-               <tr>
-                   <td>Whole Price:</td>
-                   <td><input type="text" name="AccessoryWholesalePrice" value="<?php echo $product->wholePrice; ?>"></td>
-                </tr>
+
                 <tr>
                    <td>Accessory Size:</td>
                    <td><input type="text" name="AccessorySize" value="<?php echo  $product->accessorySize; ?>"></td>

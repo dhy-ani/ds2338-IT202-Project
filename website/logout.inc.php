@@ -9,6 +9,7 @@ Email:ds2338@njit.edu
 if (isset($_SESSION['login'])) {
    unset($_SESSION['login']);
 }
+
 if (isset($_SESSION['emailAddress'])) {
     unset($_SESSION['emailAddress']);
  }
@@ -21,5 +22,10 @@ if (isset($_SESSION['emailAddress'])) {
  if (isset($_SESSION['pronouns'])) {
     unset($_SESSION['pronouns']);
  }
+ if (headers_sent()) {
+   echo "Click <a href=\"index.php?content=logout\"><strong>here</strong></a> to logout.";
+ } else {
+ 
 header("Location: index.php");
+ }
 ?>

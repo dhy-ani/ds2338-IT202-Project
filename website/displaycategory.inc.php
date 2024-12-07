@@ -8,8 +8,8 @@ Email:ds2338@njit.edu
 */
 if (!isset($_REQUEST['AccessoryCategoryID']) or (!is_numeric($_REQUEST['AccessoryCategoryID']))) {
 ?>
-   <h2><div class='link-box'>You did not select a valid categoryID to view.</div></h2>
-   <a href="index.php?content=listaccessorycategories">List Categories</a>
+   <h2><div class='link-box'>You did not select a valid categoryID to view.</h2>
+   <a href="index.php?content=listaccessorycategories">List Categories</a></div>
 <?php
 } else {
    $categoryID = $_REQUEST['AccessoryCategoryID'];
