@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: sql1.njit.edu
--- Generation Time: Nov 16, 2024 at 05:38 AM
+-- Generation Time: Dec 07, 2024 at 04:54 AM
 -- Server version: 8.0.17
 -- PHP Version: 7.4.8
 
@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS `AccessoryProducts` (
 --
 
 INSERT INTO `AccessoryProducts` (`AccessoryProductID`, `AccessoryProductCode`, `AccessoryProductName`, `AccessoryDescription`, `AccessoryCategoryID`, `AccessoryWholesalePrice`, `AccessoryListPrice`, `AccessorySize`, `DateCreated`) VALUES
-(1001, '0', 'QuickHeat Electric Kettle', 'A fast-boiling electric kettle with an auto shut-off feature. Ideal for making tea, coffee, or instant noodles quickly.', 100, 30.00, 40.00, 'Small', '2024-10-19 03:04:23'),
+(1001, 'QEK', 'QuickHeat Electric Kettle', 'A fast-boiling electric kettle with an auto shut-off feature. Ideal for making tea, coffee, or instant noodles quickly.', 100, 30.00, 40.00, 'Small', '2024-10-19 03:04:23'),
 (1002, 'SPK', 'Stainless Pro Kettle', 'Durable stainless steel electric kettle with precise temperature control. It heats water quickly and keeps it warm for a longer time.', 100, 35.00, 70.00, 'Medium', '2024-10-19 03:04:24'),
 (1003, 'PMK', 'Portable Mini Kettle', 'Compact and lightweight electric kettle, perfect for travel or small spaces. It boils water quickly and shuts off automatically for safety.', 100, 25.00, 50.00, 'Large', '2024-10-19 03:04:33'),
 (2001, 'CFP', 'Classic French Press', 'A glass French Press designed to deliver a rich, full-bodied coffee experience. The stainless steel filter ensures smooth brewing every time.', 200, 20.00, 40.00, 'Large', '2024-10-19 03:04:52'),
@@ -58,10 +58,7 @@ INSERT INTO `AccessoryProducts` (`AccessoryProductID`, `AccessoryProductCode`, `
 (5001, 'CBP', 'Cold Brew Pitcher', 'A sleek cold brew coffee maker that provides smooth, rich coffee with less acidity. The easy-to-pour pitcher is perfect for serving and storing your brew.', 500, 25.00, 50.00, 'Medium', '2024-10-19 03:06:36'),
 (5002, 'CCBM', 'Compact Cold Brew Maker', 'A compact cold brew maker designed for small kitchens or travel. It produces delicious cold brew coffee in just a few simple steps.', 500, 20.00, 30.00, 'Small', '2024-10-19 03:06:37'),
 (5003, 'DCBS', 'Deluxe Cold Brew System', 'A deluxe cold brew system with dual filtration for an ultra-smooth brew. The large capacity is ideal for making coffee in batches for the week.', 500, 35.00, 70.00, 'Large', '2024-10-19 03:06:37'),
-(7001, 'VFP', 'Vanessa Filter Pods', '0', 700, 20.00, 40.00, '0', '2024-11-01 18:31:59'),
-(8001, 'TST2', 'Test2', '0', 800, 30.00, 40.00, '0', '2024-11-15 23:57:38'),
-(8002, 'TST3', 'Test2', '0', 800, 30.00, 40.00, '0', '2024-11-16 00:00:47'),
-(8003, 'TST4', 'Test2', '0', 800, 30.00, 40.00, '0', '2024-11-16 00:02:12');
+(7001, 'VFP', 'Vanessa Filter Pods', 'This is a test for step 9. It is the description of the product 800A for category 800. We are testing valid data.', 700, 20.00, 40.00, 'small', '2024-11-01 18:31:59');
 
 --
 -- Indexes for dumped tables
